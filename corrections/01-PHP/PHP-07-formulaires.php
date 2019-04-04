@@ -55,8 +55,9 @@
     /**
      * Dans user.php
      */
-
-    echo "Votre nom est " . $_GET['nom'] . " et votre prénom est " . $_GET['prenom'];
+    if (!empty($_GET)) {
+        echo "Votre nom est " . $_GET['nom'] . " et votre prénom est " . $_GET['prenom'];
+    }
 
     ?>
 
@@ -71,7 +72,9 @@
      * Dans user.php
      */
 
-    echo "Votre nom est " . $_POST['nom'] . " et votre prénom est " . $_POST['prenom'];
+    if (!empty($_POST)) {
+        echo "Votre nom est " . $_POST['nom'] . " et votre prénom est " . $_POST['prenom'];
+    }
 
     ?>
 
@@ -154,20 +157,23 @@
 
     <!-- Dans un fichier sendfile.php -->
     <?php
+
+    if (!empty($_FILES)) {
+
         $fichier = $_FILES['carte_id'];
 
         $nomFichier = basename($_FILES['carte_id']['name']);
 
         $extensionFichier = pathinfo($_FILES['carte_id']['name'], PATHINFO_EXTENSION);
 
-
-        $allowed =  array('gif','png' ,'jpg');
+        $allowed =  array('gif', 'png', 'jpg');
         $filename = $_FILES['video_file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        if(!in_array($ext,$allowed) ) {
+        if (!in_array($ext, $allowed)) {
             echo 'error';
         }
 
+    }
 
     ?>
 
@@ -194,6 +200,9 @@
 
     <!-- Dans un fichier sendfile.php -->
     <?php
+
+    if (!empty($_FILES)) {
+
         $fichier = $_FILES['carte_id'];
 
         $nomFichier = basename($_FILES['carte_id']['name']);
@@ -201,9 +210,12 @@
 
         $extensionsAutorisees = ['pdf']; // Tableau des extensions acceptées
 
-        if( !in_array($extensionFichier, $extensionsAutorisees) ) {
+        if (!in_array($extensionFichier, $extensionsAutorisees)) {
             echo 'Attention, le fichier n\'est pas un pdf !';
         }
+
+    }
+
     ?>
 
 
