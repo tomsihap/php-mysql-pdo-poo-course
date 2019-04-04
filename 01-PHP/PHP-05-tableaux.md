@@ -24,13 +24,13 @@ Avec le tableau de l'exercice , afficher la valeur de l'index 5.
 Avec le tableau de l'exercice 1, modifier le mois de **aout** pour lui ajouter l'accent manquant.
 
 ## Exercice 5
-Créer un tableau associatif avec comme index le numéro des départements des Hauts de France et en valeur leur nom.
+Créer un tableau associatif avec comme index le numéro des départements de Auvergne-Rhône-Alpes et en valeur leur nom.
 
 ## Exercice 6
-Avec le tableau de l'exercice 5, afficher la valeur de l'index 59.
+Avec le tableau de l'exercice 5, afficher la valeur de l'index 63.
 
 ## Exercice 7
-Avec le tableau de l'exercice 5, ajouter la ligne correspondant au département de la ville de Reims.
+Avec le tableau de l'exercice 5, ajouter la ligne correspondant au département de la ville de Chambéry.
 
 ## Exercice 8
 Avec le tableau de l'exercice 1 et une boucle, afficher toutes les valeurs de ce tableau.
@@ -39,5 +39,5 @@ Avec le tableau de l'exercice 1 et une boucle, afficher toutes les valeurs de ce
 Avec le tableau de l'exercice 5, afficher toutes les valeurs de ce tableau.
 
 ## Exercice 10
-Avec le tableau de l'exercice 5, afficher toutes les valeurs de ce tableau ainsi que les clés associés.  
+Avec le tableau de l'exercice 5, afficher toutes les valeurs de ce tableau ainsi que les clés associés.
 Cela pourra être, par exemple, de la forme : **"Le département" + nom du département + "a le numéro" + numéro du département**
