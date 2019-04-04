@@ -111,4 +111,3 @@ var_dump( exo8(null, 2, 3) );
 var_dump( exo8(1, null, 3));
 var_dump( exo8(1, 2) );
 echo "<hr>";
-
