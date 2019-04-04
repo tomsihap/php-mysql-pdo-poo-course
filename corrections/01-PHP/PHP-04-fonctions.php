@@ -4,7 +4,7 @@
 // ## Exercice 1
 // Faire une fonction qui retourne **true**.
 
-function exo1() {
+function exo1() : bool {
     return true;
 }
 var_dump(exo1());
@@ -13,7 +13,7 @@ echo "<hr>";
 // ## Exercice 2
 // Faire une fonction qui prend en paramètre une chaine de caractères et qui retourne cette même chaine.
 
-function exo2(string $chaine) {
+function exo2(string $chaine) : string {
     return $chaine;
 }
 var_dump( exo2('hello !') );
@@ -23,7 +23,7 @@ echo "<hr>";
 // ## Exercice 3
 // Faire une fonction qui prend en paramètre deux chaines de caractères et qui revoit la concaténation de ces deux chaines
 
-function exo3(string $chaine1, string $chaine2) {
+function exo3(string $chaine1, string $chaine2) : string {
     return $chaine1 . $chaine2;
 }
 var_dump( exo3('hello ', 'world') );
@@ -35,7 +35,7 @@ echo "<hr>";
 // - **Le premier nombre est plus petit** si le premier nombre est plus petit que le deuxième
 // - **Les deux nombres sont identiques** si les deux nombres sont égaux
 
-function exo4(int $numberA, int $numberB) {
+function exo4(int $numberA, int $numberB) : string {
 
     if ($numberA < $numberB) {
         return "Le premier nombre est plus petit";
@@ -56,7 +56,7 @@ echo "<hr>";
 // ## Exercice 5
 // Faire une fonction qui prend en paramètre un nombre et une chaine de caractères et qui renvoit la concaténation de ces deux paramètres.
 
-function exo5(int $number, string $chaine) {
+function exo5(int $number, string $chaine) : string {
     return $number . $chaine;
 }
 var_dump( exo5(49, 'ers') );
@@ -66,7 +66,7 @@ echo "<hr>";
 // Faire une fonction qui prend trois paramètres : **le nom, le prénom et l'âge d'une personne**. Elle doit renvoyer une chaine de la forme :
 // "Bonjour" + **nom** + **prénom** + ",tu as" + **age** + "ans".
 
-function exo6(string $nom, string $prenom, int $age) {
+function exo6(string $nom, string $prenom, int $age) : string {
     return 'Bonjour ' . $nom . ' ' . $prenom . ', tu as ' . $age . ' ans.';
 }
 
@@ -85,7 +85,7 @@ echo "<hr>";
 
 // Gérer tous les cas.
 
-function exo7(int $age, string $gender) {
+function exo7(int $age, string $gender) : string {
 
     $majorite = ($age < 18) ? 'mineur' : 'majeur';
     $genre = ($gender === 'homme') ? 'un homme' : 'une femme';
@@ -102,7 +102,7 @@ echo "<hr>";
 // Faire une fonction qui prend en paramètre trois nombres et qui renvoit la somme de ces nombres.
 // Tous les paramètres doivent avoir une valeur par défaut.
 
-function exo8(?int $numberA = 64, ?int $numberB = 128, ?int $numberC = 256) {
+function exo8(?int $numberA = 64, ?int $numberB = 128, ?int $numberC = 256) : int {
     return $numberA + $numberB + $numberC;
 }
 
