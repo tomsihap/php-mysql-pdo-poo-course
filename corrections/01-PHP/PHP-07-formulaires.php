@@ -178,7 +178,7 @@
                         <option value="Mme">Mme.</option>
                     </select>
 
-                    <input type="file" name="carte_id" id="">
+                    <input type="file" name="carte_id" id="" accept="application/pdf">
 
                     <button type="submit" class="btn btn-success">Envoyer</button>
                 </form>
@@ -226,14 +226,14 @@
                 <!-- Dans un fichier action (sendfile.php par ex) -->
                 <?php
 
-                if (!empty($_FILES)) {
+                if (!empty($_FILES) && isset($_FILES['carte_id'])) {
 
                     $fichier = $_FILES['carte_id'];
 
                     $nomFichier = basename($_FILES['carte_id']['name']);
                     $extensionFichier = pathinfo($_FILES['carte_id']['name'], PATHINFO_EXTENSION);
 
-                    $extensionsAutorisees = ['pdf']; // Tableau des extensions acceptées
+                    $extensionsAutorisees = ['pdf', 'docx', 'doc']; // Tableau des extensions acceptées
 
                     if (!in_array($extensionFichier, $extensionsAutorisees)) {
                         echo 'Attention, le fichier n\'est pas un pdf !';
