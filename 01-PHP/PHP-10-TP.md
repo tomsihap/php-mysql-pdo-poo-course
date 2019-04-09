@@ -22,9 +22,26 @@ On devra pouvoir saisir les informations suivantes :
 ```
 
 - Adresse (max 255 chars)
-- Email ( filter_var($email, FILTER_VALIDATE_EMAIL) )
+- Email
+
+```php
+
+if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+    echo 'email valide';
+}
+```
+
 - Téléphone (10 chiffres)
-- Diplôme (sans, Bac, Bac+2, Bac+3 ou supérieur) (choix valide)
+
+```php
+
+if ( preg_match("(0|(\\+33)|(0033))[1-9][0-9]{8}", $telephone ) ) {
+    echo 'le telephone est valide';
+}
+
+
+- Diplôme (sans, Bac, Bac+2, Bac+3 ou supérieur) (choix valide) `in_array()`
+
 - Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi? (text)
 - Avez vous déjà eu une expérience avec la programmation et/ou l'informatique avant de remplir ce formulaire ? (oui/non : radio button)
 - Acceptez-vous de recevoir la newsletter ? (checkbox : vrai/faux)
