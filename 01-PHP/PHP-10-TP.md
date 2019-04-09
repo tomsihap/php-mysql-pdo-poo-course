@@ -8,7 +8,6 @@ On devra pouvoir saisir les informations suivantes :
 - Nom   (max 150 chars)
 - Prénom    (max 50 chars)
 - Date de naissance (format Y-m-d : On doit pouvoir créer une date avec `$d = DateTime::createFromFormat($format, $date)`;
-- Pays de naissance ()
 - Nationalité (un des pays du json fourni)
 - Adresse (max 255 chars)
 - Email ( filter_var($email, FILTER_VALIDATE_EMAIL) )
