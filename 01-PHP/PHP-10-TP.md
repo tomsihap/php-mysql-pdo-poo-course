@@ -1,22 +1,50 @@
 # PHP - TP
 **Pour tous les exercices, il faut soigner son CSS**
-## TP 1
-Faire une page pour enregistrer un futur apprenant. On devra pouvoir saisir les informations suivantes :
-- Nom
-- Prénom
-- Date de naissance
-- Pays de naissance
-- Nationalité
-- Adresse
+## TP-1
+Faire une page pour enregistrer un futur apprenant.
+On utilisera la liste de pays en JSON suivante : https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json
+
+On devra pouvoir saisir les informations suivantes :
+- Nom   (max 150 chars)
+- Prénom    (max 50 chars)
+- Date de naissance (format Y-m-d : On doit pouvoir créer une date avec `$d = DateTime::createFromFormat($format, $date)`;
+- Nationalité (un des pays du json fourni)
+
+```php
+    $json = '[{name: 'Austria', code: 'AT'}, ...]';
+
+    $data = json_decode($json);
+
+    foreach($data as $d) {
+        'Pays : ' . $d->name;
+    }
+
+```
+
+- Adresse (max 255 chars)
 - Email
-- Téléphone
-- Diplôme (sans, Bac, Bac+2, Bac+3 ou supérieur)
-- Numéro pôle emploi
-- Nombre de badge
-- Liens codecademy
-- Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi?
-- Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)
-- Avez vous déjà eu une expérience avec la programmation et/ou l'informatique avant de remplir ce formulaire ?
+
+```php
+
+if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+    echo 'email valide';
+}
+```
+
+- Téléphone (10 chiffres)
+
+```php
+
+if ( preg_match("(0|(\\+33)|(0033))[1-9][0-9]{8}", $telephone ) ) {
+    echo 'le telephone est valide';
+}
+```
+
+- Diplôme (sans, Bac, Bac+2, Bac+3 ou supérieur) (choix valide) `in_array()`
+
+- Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi? (text)
+- Avez vous déjà eu une expérience avec la programmation et/ou l'informatique avant de remplir ce formulaire ? (oui/non : radio button)
+- Acceptez-vous de recevoir la newsletter ? (checkbox : vrai/faux)
 
 A la validation de ces informations, il faudra les afficher dans la même page à la place du formulaire. Il n'y a pas besoin de les enregistrer en base de données !
 
