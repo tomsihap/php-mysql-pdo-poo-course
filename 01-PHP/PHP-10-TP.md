@@ -1,6 +1,6 @@
 # PHP - TP
 **Pour tous les exercices, il faut soigner son CSS**
-## TP 1
+## TP-1
 Faire une page pour enregistrer un futur apprenant.
 On utilisera la liste de pays en JSON suivante : https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json
 
@@ -9,6 +9,18 @@ On devra pouvoir saisir les informations suivantes :
 - Prénom    (max 50 chars)
 - Date de naissance (format Y-m-d : On doit pouvoir créer une date avec `$d = DateTime::createFromFormat($format, $date)`;
 - Nationalité (un des pays du json fourni)
+
+```php
+    $json = '[{name: 'Austria', code: 'AT'}, ...]';
+
+    $data = json_decode($json);
+
+    foreach($data as $d) {
+        'Pays : ' . $d->name;
+    }
+
+```
+
 - Adresse (max 255 chars)
 - Email ( filter_var($email, FILTER_VALIDATE_EMAIL) )
 - Téléphone (10 chiffres)
