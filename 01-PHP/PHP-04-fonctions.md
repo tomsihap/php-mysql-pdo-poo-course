@@ -37,3 +37,11 @@ Gérer tous les cas.
 ## Exercice 8
 Faire une fonction qui prend en paramètre trois nombres et qui renvoit la somme de ces nombres.
 Tous les paramètres doivent avoir une valeur par défaut.
+
+## Exercice 9
+
+Trouvez les fonctions prêtes à l'emploi de PHP permettant de :
+a. Trouver la longueur d'un string
+b. Rechercher et remplacer dans un string
+c. Tester si le type de la variable est string.
+
