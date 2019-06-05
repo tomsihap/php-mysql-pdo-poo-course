@@ -45,3 +45,9 @@ Trouvez les fonctions prêtes à l'emploi de PHP permettant de :
 - b. Rechercher et remplacer dans une string
 - c. Tester si le type de la variable est string.
 
+## Exercice 10
+
+Créer une fonction qui inverse une string (par exemple: "Table" deviendra "elbaT") - sans fonction récursive.
+> Indice : vous pouvez connaître la longueur d'une string avec str_len($string)
+> Indice : vous pouvez accéder à la nième lettre d'une string : `$string[n]` (par exemple la 3ème lettre : `$string[2]` ).
+
