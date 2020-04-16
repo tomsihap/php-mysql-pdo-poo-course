@@ -5,7 +5,7 @@ Si l'âge est supérieur ou égale à 18, afficher **Vous êtes majeur**. Dans l
 
 ## Exercice 2
 Créer une variable **isEasy** de type booléan et l'initialiser avec une valeur.
-Afficher **C'est facile!!** si c'est vrai. Dans le cas contraire afficher **C'est difficile !!!**.
+Afficher **C'est facile !** si c'est vrai. Dans le cas contraire afficher **C'est difficile !**.
 **Bonus :** L'écrire de deux manières différentes.
 
 ## Exercice 3
