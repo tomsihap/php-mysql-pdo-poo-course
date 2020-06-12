@@ -31,3 +31,7 @@ Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. Afficher en 
 
 ## Exercice 8
 Sur le formulaire de l'exercice 6, en plus de ce qui est demandé sur les exercices précédent, vérifier que le fichier transmis est bien un fichier **pdf**.
+
+# Correction
+
+https://github.com/tomsihap/php-post-correction
