@@ -30,6 +30,12 @@ Faire une page index.php. Tester sur cette page que tous les paramètres de cett
 
 # Correction
 
+Vous pouvez tester cette correction en saisissant tous les paramètres d'un seul coup :
+
+```
+?firstname=luke&lastname=skywalker&age=29&startDate=12/12/2019&endDate=12/12/2020&language=PHP&server=LAMP&week=12&building=12&room=1201
+
+
 ```php
 <?php
 
