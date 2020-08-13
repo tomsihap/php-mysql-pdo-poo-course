@@ -40,13 +40,20 @@ Fichier: `index.php` :
 
 ```php
 <?php
+var_dump($_GET);
 
+/**
+ * On n'a pas besoin de faire de isset($_GET) puisque c'est une superglobale
+ * et elle existera forcément.
+ */
 /**
  * Exercice 1
  * ?lastname=Nemare&firstname=Jean
  */
 
-if (!isset($_GET['lastname']) OR !ctype_alpha($_GET['lastname'])) {
+// (!a or !b) équivaut à : !(a && b)
+
+if (!isset($_GET['lastname']) or !ctype_alpha($_GET['lastname'])) {
     throw new Exception("Il y a eu un problème de saisie sur le nom.");
 }
 
@@ -72,6 +79,8 @@ echo "<hr>";
 /**
  * Exercice 3
  * ?startDate=2/05/2016&endDate=27/11/2016
+ *
+ * 2016-11-27
  */
 
 if (!isset($_GET['startDate'])) {
@@ -82,18 +91,25 @@ if (!isset($_GET['endDate'])) {
     throw new Exception("Il y a eu un problème de saisie sur la date de fin.");
 }
 
-// On utilise la fonction explode() qui retourne une string découpée sous forme d'array, dont on précise le séparateur (ici: le slash "/")
-$startDateArray = explode('/', $_GET['startDate']);
-$endDateArray = explode('/', $_GET['endDate']);
-
-// Si tout se passe bien, on devrait avoir un array avec 3 éléments: 0: jour, 1: mois, 2: année, on en prépare une string au format standard YYYY-MM-DD :
-
-$startDateString= $startDateArray[2] . "-" . $startDateArray[1] . "-" . $startDateArray[0];
-$endDateString = $endDateArray[2] . "-" . $endDateArray[1] . "-" . $endDateArray[0];
-
-// Maintenant que nos strings de date supposément au format YYYY-MM-DD sont prêtes, on essaie de créer des objets DateTime. On met ça dans un try/catch de sorte
-// à gérer l'erreur si l'objet n'a pas pu être créé (ce qui voudrait dire que la date saisie au départ n'était pas au bon format).
 try {
+    /**
+     * En Input :
+     * $_GET['startDate'] et $_GET['endDate'] au format dd/mm/yyyy
+     */
+    // On utilise la fonction explode() qui retourne une string découpée sous forme d'array, dont on précise le séparateur (ici: le slash "/")
+    $startDateArray = explode('/', $_GET['startDate']);
+    $endDateArray = explode('/', $_GET['endDate']);
+
+    /**
+     * On prépare les nouvelles dates au format yyyy-mm-dd :
+     */
+    // Si tout se passe bien, on devrait avoir un array avec 3 éléments: 0: jour, 1: mois, 2: année, on en prépare une string au format standard YYYY-MM-DD :
+    $startDateString = $startDateArray[2] . "-" . $startDateArray[1] . "-" . $startDateArray[0];
+    $endDateString = $endDateArray[2] . "-" . $endDateArray[1] . "-" . $endDateArray[0];
+
+    // Maintenant que nos strings de date supposément au format YYYY-MM-DD sont prêtes, on essaie de créer des objets DateTime. On met ça dans un try/catch de sorte
+    // à gérer l'erreur si l'objet n'a pas pu être créé (ce qui voudrait dire que la date saisie au départ n'était pas au bon format).
+
     $startDate = new DateTime($startDateString);
     $endDate = new DateTime($endDateString);
 } catch (Exception $e) {
@@ -106,7 +122,7 @@ if ($startDate > $endDate) {
     throw new Exception("La date de fin est supérieure à la date de démarrage.");
 }
 
-echo "Votre contrat commence le " . $startDate->format('d/m/Y') . " et se termine le  " . $endDate->format('d/m/Y') . ".";
+echo "Votre contrat commence le " . $startDate->format('d/m/Y H:i:s') . " et se termine le  " . $endDate->format('d/m/Y H:i:s') . ".";
 echo "<hr>";
 
 /**
@@ -114,7 +130,7 @@ echo "<hr>";
  * ?language=PHP&server=LAMP
  */
 
-if (!isset($_GET['language']) OR !ctype_alnum($_GET['language'])) {
+if (!isset($_GET['language']) or !ctype_alnum($_GET['language'])) {
     throw new Exception("Il y a eu un problème de saisie sur le language.");
 }
 
